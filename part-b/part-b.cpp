@@ -7,7 +7,20 @@ using namespace std;
  * Function prototype
 *******************************************************************************/
 
-void towerHanoi(int, string, string, string, int&);
+void towerHanoi(int n, string from, string aux, string to, int& numMoves)
+{
+    // TO DO: Implement your code
+    if (n == 1) {
+        cout << "Move disk from " << from << " to " << to << endl;
+        numMoves++;
+        return;
+    }
+    towerHanoi(n - 1, from, aux, to, numMoves);
+    cout << "Move disk from " << from << " to " << to << endl;
+    numMoves++;
+    towerHanoi(n - 1, aux, to, from, numMoves);
+
+}
 
 /*******************************************************************************
  * Description:
